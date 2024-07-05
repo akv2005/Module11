@@ -1,1 +1,57 @@
+import requests
 
+url = "https://jsonplaceholder.typicode.com/posts"
+data = {
+    "title": "Пример заголовка",
+    "body": "Текст статьи",
+    "userId": 1
+}
+response = requests.post(url, json=data)
+
+print(response.status_code)  # Выводит код состояния HTTP, например, 201
+print(response.json())  # Выводит JSON-ответ
+
+print('*************')
+#Библиотека pandas является одной из самых популярных библиотек в Python для обработки и анализа данных.
+# С помощью pandas можно легко манипулировать таблицами данных, выполнять различные агрегации и визуализации.
+# В этой статье мы рассмотрим основные возможности работы с pandas и научимся испо#льзовать эту библиотеку.
+# Например DataFrame – это основной объект pandas, который представляет собой двумерную таблицу с метками на строках и колонках.
+# Создадим простой DataFrame из словаря:
+import pandas as pd
+
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35],
+    "City": ["New York", "San Francisco", "Los Angeles"]
+}
+df = pd.DataFrame(data)
+print(df.head())
+print(df["Name"])
+
+#NumPy — это одна из основных библиотек для работы с числовыми данными. Она предоставляет функции для работы с массивами и матрицами,
+# а также статистические функции.
+print('*************')
+import numpy as np
+
+data = np.array([1, 2, 3, 4, 5, 6, 7])
+mean = np.mean(data)
+median = np.median(data)
+print(mean ,"  - среднее значение из заданной матрицы.  ")
+print(median , ' = медиана массива')
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [25, 32, 34, 20, 25]
+plt.plot(x, y)
+plt.show()
+
+print('*************')
+
+from PIL import Image
+
+image = Image.open('image-pillow.jpg')
+image.show()
+#Обрезка изображений через Pillow (crop)
+cropped = image.crop((20, 80, 200, 400))
+cropped.save('cropped_jelly.png')
